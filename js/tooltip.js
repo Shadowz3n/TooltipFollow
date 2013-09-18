@@ -4,6 +4,8 @@ $.fn.tooltipFollow = function(options)
 	var opt = $.extend({
 		texto: "Texto padrão";
 		tema: "background:gray;border:1px solid #f4f4f4;";
+		top:  -25,
+		left: +30
 	}, options);
 	
 	var div = $(this);
@@ -11,8 +13,8 @@ $.fn.tooltipFollow = function(options)
 		 var tooltip_id = "tooltip_"+Date().getTime();
 		 $("body").append("<div id='"tooltip_id"' style="+opt.tema+">"+opt.texto+"</div>");
 		 $("#"+tooltip_id).css({
-			 top:		event.pageY - 25,
-			 left:		event.pageX + 30,
+			 top:		event.pageY - opt.top,
+			 left:		event.pageX + opt.left,
 			 position:	"absolute",
 			 display:	"block"
 		 }).fadeIn(250);
@@ -20,8 +22,8 @@ $.fn.tooltipFollow = function(options)
 		$("#"+tooltip_id).remove();
 	}).mousemove(function(event){
 	$("#"+tooltip_id).css({
-		top			event.pageY - 25,
-		left			event.pageX + 30
+		top			event.pageY - opt.top,
+		left			event.pageX + opt.left
 	});
    })
 }
