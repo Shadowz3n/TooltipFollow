@@ -2,16 +2,17 @@ window.jQuery || document.write(unescape('%3Cscript src="http://jquery.com/jquer
 $.fn.tooltipFollow = function(options)
 {
 	var opt = $.extend({
-		texto: "Texto padrão";
-		tema: "background:gray;border:1px solid #f4f4f4;";
-		top:  -25,
-		left: +30
+		texto: 		"Texto padrão",
+		background: 	"gray",
+		color:		"white",
+		top:  		-25,
+		left: 		+30
 	}, options);
 	
 	var div = $(this);
-		 $(div).hover(function(event){
+	$(div).hover(function(event){
 		 var tooltip_id = "tooltip_"+Date().getTime();
-		 $("body").append("<div id='"tooltip_id"' style="+opt.tema+">"+opt.texto+"</div>");
+		 $("body").append("<div id='"tooltip_id"' style='background:"+opt.background+";color:"+opt.color+"'>"+opt.texto+"</div>");
 		 $("#"+tooltip_id).css({
 			 top:		event.pageY - opt.top,
 			 left:		event.pageX + opt.left,
