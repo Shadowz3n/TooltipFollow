@@ -12,7 +12,7 @@ $.fn.tooltipFollow = function(options)
 	var div = $(this);
 	$(div).hover(function(event){
 		 var tooltip_id = "tooltip_"+Date().getTime();
-		 $("body").append("<div id='"tooltip_id"' style='background:"+opt.background+";color:"+opt.color+"'>"+opt.texto+"</div>");
+		 $("body").append("<div id='"tooltip_id"' style='background:"+opt.background+";color:"+opt.color+";padding:10px;'>"+opt.texto+"</div>");
 		 $("#"+tooltip_id).css({
 			 top:		event.pageY - opt.top,
 			 left:		event.pageX + opt.left,
