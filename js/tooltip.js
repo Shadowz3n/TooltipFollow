@@ -1,3 +1,18 @@
+/*
+	Modo de usar
+	$("a").tooltipFollow({
+		texto: "Teste"
+	});
+	
+	$("a").tooltipFollow({
+		texto: "Teste com mais parâmetros"
+		background: 	"green",
+		color:		"red",
+		top:  		-25,
+		left: 		+30
+	});
+*/
+
 window.jQuery || document.write(unescape('%3Cscript src="http://jquery.com/jquery-wp-content/themes/jquery/js/jquery-1.9.1.min.js"%3E%3C/script%3E'))
 $.fn.tooltipFollow = function(options){
 	var opt = $.extend({
@@ -29,8 +44,3 @@ $.fn.tooltipFollow = function(options){
 	}
    });
 }
-
-/* Modo de usar */
-$("a").tooltipFollow({
-	texto: "Teste"
-});
